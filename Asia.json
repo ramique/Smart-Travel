@@ -1,0 +1,57 @@
+[
+    {
+        "name": "India",
+        "job": "Mumbia </br> Pkr 103,673",
+        "img": "./image/a1.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "Thiland",
+        "job": "Bankok </br> Pkr 172,503",
+        "img": "./image/s2.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "Indonesia",
+        "job": "Monas </br> Pkr 152,824",
+        "img": "./image/a3.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "China",
+        "job": "Beijing </br> Pkr 340,054",
+        "img": "image/a5.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "Nepal",
+        "job": "Katmandu </br> Pkr 325,791",
+        "img": "image/a6.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    }
+]

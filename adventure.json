@@ -1,0 +1,47 @@
+{
+    "packages": [
+      {
+        "title": "K-2 CLASSIC TREK",
+        "description": "A Pilgrimage to the Throne Room of Mountain Gods, towards the crown of the world",
+        "image": "photos/K-2 CLASSIC TREK.jpg",
+        "price": "50,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "The Mega Trek",
+        "description": "Visit the base camps of five peaks above 8000m in Pakistan.",
+        "image": "photos/The Mega Trek.jpg",
+        "price": "45,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Rakaposhi Base Camp",
+        "description": "Take two mesmerizing treks (one easy and another moderate) in the Mighty Karakorams",
+        "image": "photos/Rakaposhi Base.jpg",
+        "price": "75,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Pakistan Heritage",
+        "description": "Discover the treasures of rich history and culture of Pakistan",
+        "image": "photos/Pakistan Heritage.jpg",
+        "price": "90,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "The Himalayan Kingdom",
+        "description": "Hike to the fairytale meadow and explore Hunza and Nagar valleys",
+        "image": "photos/himalya.jpg",
+        "price": "35,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Shandur Polo Festival",
+        "description": "Witness the King of Games on the Roof of the World",
+        "image": "photos/polo.jpg",
+        "price": "25,000PKR",
+        "rating": 3
+      }
+    ]
+  }
+  

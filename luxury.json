@@ -1,0 +1,53 @@
+{
+    "packages": [
+      {
+        "title": "America Tour Package",
+        "description": "BUFFET BREAKFAST, VISA, 12 NIGHTS, CITY TOUR, 5 STAR HOTEL",
+        "image": "photos/america tour.jpg",
+        "price": "680,000PKR",
+        "rating": 3,
+        "detailsLink": "https://www.instagram.com/smarttravels21?igsh=N2FiaG9pNWV2Mzlo"
+      },
+      {
+        "title": "Umrah With Istanbul",
+        "description": "BUFFET BREAKFAST, VISA, 08 NIGHTS, CITY TOUR, 5 STAR HOTEL",
+        "image": "photos/umrah.jpg",
+        "price": "270,000PKR",
+        "rating": 3,
+        "detailsLink": "https://www.instagram.com/smarttravels21?igsh=N2FiaG9pNWV2Mzlo"
+      },
+      {
+        "title": "Trio Schengen Tour",
+        "description": "BUFFET BREAKFAST, VISA, 12 NIGHTS, CITY TOUR, 5 STAR HOTEL",
+        "image": "photos/Schengen.jpg",
+        "price": "520,000PKR",
+        "rating": 3,
+        "detailsLink": "https://www.instagram.com/smarttravels21?igsh=N2FiaG9pNWV2Mzlo"
+      },
+      {
+        "title": "South Africa Tour",
+        "description": "VISA, 12 NIGHTS, CITY TOUR, 5 STAR HOTEL",
+        "image": "photos/africa.jpg",
+        "price": "270,000PKR",
+        "rating": 3,
+        "detailsLink": "https://www.instagram.com/smarttravels21?igsh=N2FiaG9pNWV2Mzlo"
+      },
+      {
+        "title": "Elegant Canada Tour",
+        "description": "VISA, 08 NIGHTS, CITY TOUR, 5 STAR HOTEL",
+        "image": "photos/canada.jpg",
+        "price": "675,000PKR",
+        "rating": 3,
+        "detailsLink": "https://www.instagram.com/smarttravels21?igsh=N2FiaG9pNWV2Mzlo"
+      },
+      {
+        "title": "Thailand & Singapore",
+        "description": "VISA, 12 NIGHTS, CITY TOUR, 5 STAR HOTEL",
+        "image": "photos/thailand.jpg",
+        "price": "230,000PKR",
+        "rating": 3,
+        "detailsLink": "https://www.instagram.com/smarttravels21?igsh=N2FiaG9pNWV2Mzlo"
+      }
+    ]
+  }
+  

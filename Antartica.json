@@ -1,0 +1,57 @@
+[
+    {
+        "name": "France",
+        "job": "Paris </br> Pkr 103,673",
+        "img": "./image/ar1.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "United Kingdom",
+        "job": "York </br> Pkr 172,503",
+        "img": "./image/ar2.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "New Zealand",
+        "job": "Dunedin </br> Pkr 152,824",
+        "img": "./image/ar3.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "Norway",
+        "job": "Oslo </br> Pkr 340,054",
+        "img": "image/ar4.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    },
+    {
+        "name": "Australia",
+        "job": "Sydney </br> Pkr 325,791",
+        "img": "image/ar5.jpeg",
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "instagram": "#",
+            "youtube": "#"
+        }
+    }
+]

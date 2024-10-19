@@ -1,0 +1,47 @@
+{
+    "packages": [
+      {
+        "title": "Family Tour",
+        "description": "7 days Family trip to Naran, Hunza, Naltar and Khunjerab Pass",
+        "image": "photos/uk.png",
+        "price": "55,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Family Tour",
+        "description": "8 days Family trip to Skardu, Deosai Plains, Shigar Valley, and Shangrila Lake",
+        "image": "photos/france.png",
+        "price": "65,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Family Tour",
+        "description": "5 days Family Trip to Hunza Valley, Skardu and Khunjerab Pass",
+        "image": "photos/pakistan.png",
+        "price": "80,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Family Tour",
+        "description": "3 Days Family Trip to Shogran and Siri Paye Meadows",
+        "image": "photos/italy.png",
+        "price": "90,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Family Tour",
+        "description": "5 days Family Trip to Hunza Valley, Skardu and Khunjerab Pass",
+        "image": "photos/india.png",
+        "price": "45,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Family Tour",
+        "description": "12 days Family trip to Naran, Hunza, Skardu, Naltar and Khunjerab Pass",
+        "image": "photos/us.png",
+        "price": "100,000PKR",
+        "rating": 3
+      }
+    ]
+  }
+  

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking form</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!--Navbar-->
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="./Home.html"> SmartTravel</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name"> SmartTravel</span>
+          <i class='bx bx-x'></i>
+        </div>
+        <ul class="links">
+          <li><a href="./Home.html">HOME</a></li>
+          <li><a href="./Aboutus.html">About us</a></li>
+          <li>
+            <a href="#">Trip Catalog</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li class="more">
+                <span><a href="#">Sort By Activity</a>
+                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="./adventure.html">Adventure Tour</a></li>
+                  <li><a href="./luxury.html">Luxury Tour</a></li>
+                  <li><a href="./family.html">Family Tour</a></li>
+                  <li><a href="./cultural.html">Cultural Tour</a></li>
+                </ul>
+              </li>
+              <li class="more">
+                <span><a href="#">Sort By Country</a>
+                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="./Tripcatalog.html">North America</a></li>
+                  <li><a href="./SAfrica.html">South America</a></li>
+                  <li><a href="./Asia.html">Asia</a></li>
+                  <li><a href="./europe.html">Europe</a></li>
+                  <li><a href="./africa.html">North Africa</a></li>
+                  <li><a href="./Antartica.html">Antartica</a></li>
+                  <li><a href="./SAfrica.html">South Africa</a></li>
+                </ul>
+              </li>
+              <li class="more">
+                <span><a href="#">More</a>
+                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="./destination.html">Destination</a></li>
+                  <li><a href="./transportion.html">Transportation</a></li>
+                  <li><a href="./accommodation.html">Accommodation</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="./contact.html">CONTACT US</a></li>
+          <li><a href="./feedbackform.html">Feedback</a></li>
+          <li><a href="./sign in login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Navbar-->
+
+  <div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+      <h1 class="text-white display-3 mb-4">BOOK NOW</h1>
+      <p class="fs-5 text-white mb-4">BOOK YOUR PACKAGES NOW</p>
+    </div>
+  </div>
+
+  <!-- Section Book Start -->
+  <section class="book" id="book">
+    <div class="container" id="co">
+      <div class="row">
+        <div class="col-md-6 py-3 py-md-0">
+          <div class="card">
+            <img src="./img/book-img.png" alt="Booking Image">
+          </div>
+        </div>
+
+        <div class="col-md-6 py-3 py-md-0">
+          <form id="bookingForm" onsubmit="return validateForm()">
+            <input type="text" class="form-control" id="whereTo" placeholder="Where To" required><br>
+            <input type="number" class="form-control" id="howMany" placeholder="How Many Days you Stay" min="1"
+              required><br>
+            <input type="date" class="form-control" id="arrivalDate" placeholder="Arrivals" required><br>
+            <input type="date" class="form-control" id="leavingDate" placeholder="Leaving" required><br>
+            <textarea class="form-control" rows="5" id="details" name="text" placeholder="Enter Your Name & Details"
+              required></textarea><br>
+            <button type="submit" class="btn btn-primary">Book Now</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Modal for Form Submission Notification -->
+  <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="submitModalLabel">Form Submitted</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your booking has been successfully submitted!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section Book End -->
+  <!--Footer-->
+  <footer>
+    <div class="container-fluid">
+      <div id="rw">
+        <div id="cl">
+          <img class="logo" src="./image/logo.jpg" alt="">
+          <p>
+          <p id="para">At Smart Travel, we are passionate about helping people explore the world. Our mission
+            is to make travel accessible and enjoyable for everyone.</p>
+          </p>
+        </div>
+        <div id="cl">
+          <h3>Office <div class="underline"><span></span></div>
+          </h3>
+          <p>Star Gate</p>
+          <p>Karachi, Code 7100, Ramique</p>
+          <p class="email-id">Techwiz@gmail.com</p>
+          <h5>032041179855</h5>
+        </div>
+        <div id="cl">
+          <h3>Links <div class="underline"><span></span></div>
+          </h3>
+          <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Aboutus.html">About us </a></li>
+            <li><a href="./contact.html">Contact us</a></li>
+            <li><a href="./feedbackform.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div id="cl">
+          <h3>Newsletter <div class="underline"><span></span></div>
+          </h3>
+          <form id="for">
+            <i id="far" class="fa-regular fa-envelope"></i>
+            <input type="email" placeholder="Enter Your email id" required>
+            <button type="submit"><i id="farr" class="fa-solid fa-right-long"></i></button>
+          </form>
+          <div class="social-icons">
+            <i id="fa" class="fa-brands fa-facebook"></i>
+            <i id="fa" class="fa-brands fa-twitter"></i>
+            <i id="fa" class="fa-brands fa-whatsapp"></i>
+            <i id="fa" class="fa-brands fa-pinterest"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">Techwiz &copy; 2024 - All Rights Reserved</p>
+  </footer>
+  <!--Footer-->
+
+  <script>
+    // search-box open close js code
+    let navbar = document.querySelector(".navbar");
+    let searchBox = document.querySelector(".search-box .bx-search");
+    // let searchBoxCancel = document.querySelector(".search-box .bx-x");
+
+    searchBox.addEventListener("click", () => {
+      navbar.classList.toggle("showInput");
+      if (navbar.classList.contains("showInput")) {
+        searchBox.classList.replace("bx-search", "bx-x");
+      } else {
+        searchBox.classList.replace("bx-x", "bx-search");
+      }
+    });
+
+    // sidebar open close js code
+    let navLinks = document.querySelector(".nav-links");
+    let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+    let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+    menuOpenBtn.onclick = function () {
+      navLinks.style.left = "0";
+    }
+    menuCloseBtn.onclick = function () {
+      navLinks.style.left = "-100%";
+    }
+
+
+    // sidebar submenu open close js code
+    let htmlcssArrow = document.querySelector(".htmlcss-arrow");
+    htmlcssArrow.onclick = function () {
+      navLinks.classList.toggle("show1");
+    }
+    let moreArrow = document.querySelector(".more-arrow");
+    moreArrow.onclick = function () {
+      navLinks.classList.toggle("show2");
+    }
+    let jsArrow = document.querySelector(".js-arrow");
+    jsArrow.onclick = function () {
+      navLinks.classList.toggle("show3");
+    }
+
+
+
+
+    function validateForm() {
+      const whereTo = document.getElementById("whereTo").value;
+      const howMany = document.getElementById("howMany").value;
+      const arrivalDate = document.getElementById("arrivalDate").value;
+      const leavingDate = document.getElementById("leavingDate").value;
+      const details = document.getElementById("details").value;
+
+      // Check if all fields are filled
+      if (!whereTo || !howMany || !arrivalDate || !leavingDate || !details) {
+        alert("Please fill out all fields.");
+        return false;
+      }
+
+      // Check if arrival date is before leaving date
+      if (new Date(arrivalDate) > new Date(leavingDate)) {
+        alert("Leaving date must be after arrival date.");
+        return false;
+      }
+
+      return true; // If validation passes
+    }
+  </script>
+  <script>
+    function validateForm() {
+      // Get form values
+      const whereTo = document.getElementById('whereTo').value;
+      const howMany = document.getElementById('howMany').value;
+      const arrivalDate = document.getElementById('arrivalDate').value;
+      const leavingDate = document.getElementById('leavingDate').value;
+      const details = document.getElementById('details').value;
+
+      // Regex for name validation (allowing letters and spaces)
+      const nameRegex = /^[a-zA-Z\s]+$/;
+      // Regex for location validation (allowing letters, numbers, spaces, and commas)
+      const locationRegex = /^[a-zA-Z0-9\s,]+$/;
+
+      // Validate "Where To"
+      if (!locationRegex.test(whereTo)) {
+        alert("Please enter a valid location (letters, numbers, spaces, and commas only).");
+        return false;
+      }
+
+      // Validate "How Many"
+      if (howMany < 1) {
+        alert("Please enter a number greater than 0 for 'How Many'.");
+        return false;
+      }
+
+      // Validate "Arrival Date" and "Leaving Date"
+      if (new Date(arrivalDate) >= new Date(leavingDate)) {
+        alert("Leaving date must be after the arrival date.");
+        return false;
+      }
+
+      // Validate "Details" (assuming you want to validate the name part)
+      const name = details.split(' ')[0]; // Take the first word as the name for validation
+      if (!nameRegex.test(name)) {
+        alert("Please enter a valid name (letters and spaces only).");
+        return false;
+      }
+
+      // If all validations pass
+      return true;
+    }
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{
+    "packages": [
+      {
+        "title": "World Heritage Trail",
+        "description": "Southern Pakistan tour with its beginning in Karachi you'll have a chance to explore one of Pakistan's",
+        "image": "photos/TRAIL.jpg",
+        "price": "20,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Indus Valleys Tour",
+        "description": "This tour is offering diversify culture of Pakistani people from Arabian sea to North pole of Pakistan",
+        "image": "photos/INDUS.jpg",
+        "price": "35,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Mohatta Palace",
+        "description": "Get both culture and a shopping fix on this private tour in Karachi",
+        "image": "photos/MOHATTA.jpg",
+        "price": "15,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Khunjerab Pass Tour",
+        "description": "Trango Adventure has a long track record of organizing Trekking in Pakistan.",
+        "image": "photos/KHUNJERAB.jpg",
+        "price": "25,000PKR",
+        "rating": 3
+      },
+      {
+        "title": "Old Civilization",
+        "description": "Explore and Visit the Worlds Old Civilization. This tour covers several destinations",
+        "image": "photos/CIVILIZATION.jpg",
+        "price": "10,000PKR",
+        "rating": 3
+      }
+    ]
+  }
+  

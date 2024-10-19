@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel - Antar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;1,300;1,400;1,500;1,700&display=swap">
+    <style>
+        * {
+            font-family: "poppins", sans-serif;
+        }
+
+        /*Navbar*/
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            height: 70px;
+            background: #0c2442;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+        }
+
+        nav .navbar {
+            height: 100%;
+            max-width: 1250px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            /* background: red; */
+            padding: 0 0px;
+        }
+
+        .navbar .logo a {
+            font-size: 30px;
+            line-height: 60px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav .navbar .nav-links {
+            height: 100%;
+        }
+
+        nav .navbar .links {
+            display: flex;
+        }
+
+        nav .navbar .links li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0 14px;
+        }
+
+        nav .navbar .links li a {
+            height: 100%;
+            text-decoration: none;
+            white-space: nowrap;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.5s ease;
+        }
+
+        nav .navbar .links li a :hover {
+            border-radius: 20px;
+            box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+        }
+
+        .links li:hover .htmlcss-arrow,
+        .links li:hover .js-arrow {
+            transform: rotate(180deg);
+        }
+
+        nav .navbar .links li .arrow {
+            /* background: red; */
+            height: 100%;
+            width: 22px;
+            line-height: 30px;
+            text-align: center;
+            display: inline-block;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        nav .navbar .links li .sub-menu {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 260px;
+            line-height: 40px;
+            background: #0c2442;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 4px 4px;
+            display: none;
+            z-index: 2;
+        }
+
+        nav .navbar .links li:hover .htmlCss-sub-menu,
+        nav .navbar .links li:hover .js-sub-menu {
+            display: block;
+        }
+
+        .navbar .links li .sub-menu li {
+            padding: 0 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar .links li .sub-menu a {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .navbar .links li .sub-menu .more-arrow {
+            line-height: 40px;
+        }
+
+        .navbar .links li .sub-menu .more-sub-menu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            border-radius: 0 4px 4px 4px;
+            z-index: 1;
+            display: none;
+        }
+
+        .links li .sub-menu .more:hover .more-sub-menu {
+            display: block;
+        }
+
+        .navbar .search-box {
+            position: relative;
+            height: 40px;
+            width: 40px;
+        }
+
+        .navbar .search-box i {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            line-height: 0px;
+            text-align: center;
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .search-box .input-box {
+            position: absolute;
+            right: calc(100% - 40px);
+            top: 80px;
+            height: 60px;
+            width: 300px;
+            background: #3E8DA8;
+            border-radius: 6px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.showInput .search-box .input-box {
+            top: 65px;
+            opacity: 1;
+            pointer-events: auto;
+            background: #3E8DA8;
+        }
+
+        .search-box .input-box::before {
+            content: '';
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background: #0c2442;
+            right: 10px;
+            top: -6px;
+            transform: rotate(45deg);
+        }
+
+        .search-box .input-box input {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 4px;
+            transform: translate(-50%, -50%);
+            height: 35px;
+            width: 280px;
+            outline: none;
+            padding: 0 15px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .navbar .nav-links .sidebar-logo {
+            display: none;
+        }
+
+        .navbar .bx-menu {
+            display: none;
+        }
+
+        @media (max-width:920px) {
+            nav .navbar {
+                max-width: 100%;
+                padding: 0 25px;
+            }
+
+            nav .navbar .logo a {
+                font-size: 27px;
+            }
+
+            nav .navbar .links li {
+                padding: 0 10px;
+                white-space: nowrap;
+            }
+
+            nav .navbar .links li a {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width:800px) {
+
+            .navbar .bx-menu {
+                display: block;
+            }
+
+            nav .navbar .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                display: block;
+                max-width: 270px;
+                width: 100%;
+                background: #0c2442;
+                line-height: 40px;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.5s ease;
+                z-index: 1000;
+            }
+
+            .navbar .nav-links .sidebar-logo {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .sidebar-logo .logo-name {
+                font-size: 25px;
+                color: #fff;
+            }
+
+            .sidebar-logo i,
+            .navbar .bx-menu {
+                font-size: 25px;
+                color: #fff;
+            }
+
+            nav .navbar .links {
+                display: block;
+                margin-top: 20px;
+            }
+
+            nav .navbar .links li .arrow {
+                line-height: 40px;
+            }
+
+            nav .navbar .links li {
+                display: block;
+            }
+
+            nav .navbar .links li .sub-menu {
+                position: relative;
+                top: 0;
+                box-shadow: none;
+                display: none;
+            }
+
+            nav .navbar .links li .sub-menu li {
+                border-bottom: none;
+
+            }
+
+            .navbar .links li .sub-menu .more-sub-menu {
+                display: none;
+                position: relative;
+                left: 0;
+            }
+
+            .navbar .links li .sub-menu .more-sub-menu li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .links li:hover .htmlcss-arrow,
+            .links li:hover .js-arrow {
+                transform: rotate(0deg);
+            }
+
+            .navbar .links li .sub-menu .more-sub-menu {
+                display: none;
+            }
+
+            .navbar .links li .sub-menu .more span {
+                /* background: red; */
+                display: flex;
+                align-items: center;
+                /* justify-content: space-between; */
+            }
+
+            .links li .sub-menu .more:hover .more-sub-menu {
+                display: none;
+            }
+
+            nav .navbar .links li:hover .htmlCss-sub-menu,
+            nav .navbar .links li:hover .js-sub-menu {
+                display: none;
+            }
+
+            .navbar .nav-links.show1 .links .htmlCss-sub-menu,
+            .navbar .nav-links.show3 .links .js-sub-menu,
+            .navbar .nav-links.show2 .links .more .more-sub-menu {
+                display: block;
+            }
+
+            .navbar .nav-links.show1 .links .htmlcss-arrow,
+            .navbar .nav-links.show3 .links .js-arrow {
+                transform: rotate(180deg);
+            }
+
+            .navbar .nav-links.show2 .links .more-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (max-width:370px) {
+            nav .navbar .nav-links {
+                max-width: 100%;
+            }
+        }
+
+        /* NAvbar */
+
+        #th1 {
+            font-weight: 500;
+            font-size: 50px;
+            color: white;
+            padding-bottom: 70px;
+            text-align: center;
+        }
+
+        #th2 {
+            padding-top: 20px;
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .contact {
+            background: rgba(34, 36, 34, 0.616);
+            border-style: dotted;
+            border-color: var(--bs-white);
+            border-radius: 50px;
+        }
+
+        .bg-breadcrumb {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 100px 0 0 0;
+        }
+
+        /* search */
+        #location-search {
+            transform: translateY(-170%);
+        }
+
+        .form-wrapper {
+            background-color: rgb(235, 229, 229);
+            padding: 2rem;
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        form input,
+        select {
+            padding: 0.6rem;
+            outline: none;
+            font-size: 1.1rem;
+            color: #000;
+            border: 1px solid grey;
+            border-radius: 4px;
+        }
+
+        .primary-btn {
+            width: 50%;
+            height: 35px;
+            outline: none;
+            border: none;
+            padding: 0.3rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media(max-width: 900px) {
+            #th1 {
+                padding-bottom: 0;
+            }
+
+            #location-search {
+                transform: translateY(0%);
+                margin: 2rem 0;
+            }
+
+            form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* search */
+        #container {
+            max-width: 950px;
+            width: 100%;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        #container .main-card {
+            display: flex;
+            justify-content: space-evenly;
+            width: 200%;
+            transition: 1s;
+        }
+
+        #two:checked~.main-card {
+            margin-left: -100%;
+        }
+
+        #container .main-card .cards {
+            width: calc(100% / 2 - 10px);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 20px;
+            justify-content: space-between;
+        }
+
+        .main-card .cards .card {
+            width: 350px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s ease;
+        }
+
+        .main-card .cards .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .cards .card .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cards .card .content .img {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            padding: 3px;
+            background: #000000;
+            margin-bottom: 14px;
+        }
+
+        .card .content .img img {
+            height: 100%;
+            width: 100%;
+            border: 3px solid #ffff;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card .content .name {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .card .content .job {
+            font-size: 20px;
+            color: #9e3d1f;
+        }
+
+        .card .content .media-icons {
+            margin-top: 10px;
+            display: flex;
+
+        }
+
+        .media-icons a {
+            text-align: center;
+            line-height: 33px;
+            height: 35px;
+            width: 35px;
+            margin: 0 4px;
+            font-size: 14px;
+            color: #FFF;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: #424141;
+            transition: all 0.3s ease;
+        }
+
+        .media-icons a:hover {
+            color: #42b9bd;
+            background-color: #fff;
+            border-color: #000000;
+        }
+
+        #container .button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .button label {
+            height: 15px;
+            width: 15px;
+            border-radius: 20px;
+            background: #424141;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .button label.active {
+            width: 35px;
+        }
+
+        #one:checked~.button .one {
+            width: 35px;
+        }
+
+        #one:checked~.button .two {
+            width: 15px;
+        }
+
+        #two:checked~.button .one {
+            width: 15px;
+        }
+
+        #two:checked~.button .two {
+            width: 35px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-card .cards .card {
+                margin: 20px 0 10px 0;
+                width: calc(100% / 2 - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-card .cards .card {
+                /* margin: 20px 0 10px 0; */
+                width: 100%;
+            }
+        }
+
+        /*Footer*/
+        footer {
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            background: #0c2442;
+            color: #fff;
+            padding: 100px 0px 30px;
+            border-top-left-radius: 125px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        #rw {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        #cl {
+            flex-basis: 23%;
+            padding: 10px;
+        }
+
+        #cl:nth-child(2),
+        .cl:nth-child(3) {
+            flex-basis: 15%;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+
+        #cl h3 {
+            width: fit-content;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .email-id {
+            width: fit-content;
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 12px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #for {
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        #for #far {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        #for input {
+            width: 100%;
+            background: transparent;
+            color: #ccc;
+            border: 0;
+            outline: none;
+        }
+
+        #for button {
+            background: transparent;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #for #farr {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .social-icons #fa {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: #000;
+            background: #fff;
+            margin-right: 15px;
+        }
+
+        hr {
+            width: 90%;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin: 20px auto;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .underline {
+            width: 100%;
+            height: 5px;
+            background: #767676;
+            border-radius: 3px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .underline span {
+            width: 15px;
+            height: 100%;
+            background: #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: moving 2s linear infinite;
+        }
+
+        @keyframes moving {
+            0% {
+                left: -20px;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            footer {
+                bottom: unset;
+            }
+
+            #cl {
+                flex-basis: 100%;
+            }
+
+            #cl:nth-child(2),
+            .cl:nth-child(3) {
+                flex-basis: 100%;
+            }
+        }
+
+        /*Footer*/
+    </style>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="./Home.html"> SmartTravel</a></div>
+            <div class="nav-links">
+                <div class="sidebar-logo">
+                    <span class="logo-name"> SmartTravel</span>
+                    <i class='bx bx-x'></i>
+                </div>
+                <ul class="links">
+                    <li><a href="./Home.html">HOME</a></li>
+                    <li><a href="./Aboutus.html">About us</a></li>
+                    <li>
+                        <a href="#">Trip Catalog</a>
+                        <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                        <ul class="htmlCss-sub-menu sub-menu">
+                            <li class="more">
+                                <span><a href="#">Sort By Activity</a>
+                                    <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                                </span>
+                                <ul class="more-sub-menu sub-menu">
+                                    <li><a href="./adventure.html">Adventure Tour</a></li>
+                                    <li><a href="./luxury.html">Luxury Tour</a></li>
+                                    <li><a href="./family.html">Family Tour</a></li>
+                                    <li><a href="./cultural.html">Cultural Tour</a></li>
+                                </ul>
+                            </li>
+                            <li class="more">
+                                <span><a href="#">Sort By Country</a>
+                                    <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                                </span>
+                                <ul class="more-sub-menu sub-menu">
+                                    <li><a href="./Tripcatalog.html">North America</a></li>
+                                    <li><a href="./SAfrica.html">South America</a></li>
+                                    <li><a href="./Asia.html">Asia</a></li>
+                                    <li><a href="./europe.html">Europe</a></li>
+                                    <li><a href="./africa.html">North Africa</a></li>
+                                    <li><a href="./Antartica.html">Antartica</a></li>
+                                    <li><a href="./SAfrica.html">South Africa</a></li>
+                                </ul>
+                            </li>
+                            <li class="more">
+                                <span><a href="#">More</a>
+                                    <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                                </span>
+                                <ul class="more-sub-menu sub-menu">
+                                    <li><a href="./destination.html">Destination</a></li>
+                                    <li><a href="./transportion.html">Transportation</a></li>
+                                    <li><a href="./accommodation.html">Accommodation</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="./contact.html">CONTACT US</a></li>
+                    <li><a href="./feedbackform.html">Feedback</a></li>
+                    <li><a href="./sign in login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar-->
+
+    <div class="container-fluid bg-breadcrumb">
+        <h1 id="th1">Trip Catalog</h1>
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="display-3 mb-4" style="color: transparent;">Contact Us</h3>
+            <section id="location-search">
+                <div class="container">
+                    <div class="form-wrapper">
+                        <form action="#">
+                            <input type="text" placeholder="Where to?" class="form-control">
+                            <select class="form-control">
+                                <option value="Destination">Destination </option>
+                                <option value="Destination">Greece</option>
+                                <option value="Destination">London</option>
+                                <option value="Destination">Maldives</option>
+                                <option value="Destination">Paris</option>
+                            </select>
+                            <select class="form-control">
+                                <option value="duration">Duration</option>
+                                <option value="day-1">1 Day Tour</option>
+                                <option value="2-4 Days">2-4 Days Tour</option>
+                                <option value="5-7 Days">5-7 Days Tour</option>
+                                <option value="7+ Days">7+ Days</option>
+                            </select>
+                            <button type="button" class="primary-btn">Search Now</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="th2">Antarctica</div>
+
+    <div class="container" id="container">
+        <input type="radio" name="dot" id="one">
+        <input type="radio" name="dot" id="two">
+        <div class="main-card" id="cards-container"> </div>
+        <div class="button">
+            <label for="one" class=" active one"></label>
+            <label for="two" class="two"></label>
+        </div>
+    </div>
+
+
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid">
+            <div id="rw">
+                <div id="cl">
+                    <img class="logo" src="./image/logo.jpg" alt="">
+                    <p>
+                    <p id="para">At Smart Travel, we are passionate about helping people explore the world. Our mission
+                        is to make travel accessible and enjoyable for everyone.</p>
+                    </p>
+                </div>
+                <div id="cl">
+                    <h3>Office <div class="underline"><span></span></div>
+                    </h3>
+                    <p>Star Gate</p>
+                    <p>Karachi, Code 7100, Ramique</p>
+                    <p class="email-id">Techwiz@gmail.com</p>
+                    <h5>032041179855</h5>
+                </div>
+                <div id="cl">
+                    <h3>Links <div class="underline"><span></span></div>
+                    </h3>
+                    <ul>
+                        <li><a href="./Home.html">Home</a></li>
+                        <li><a href="./Aboutus.html">About us </a></li>
+                        <li><a href="./contact.html">Contact us</a></li>
+                        <li><a href="./feedbackform.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div id="cl">
+                    <h3>Newsletter <div class="underline"><span></span></div>
+                    </h3>
+                    <form id="for">
+                        <i id="far" class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Enter Your email id" required>
+                        <button type="submit"><i id="farr" class="fa-solid fa-right-long"></i></button>
+                    </form>
+                    <div class="social-icons">
+                        <i id="fa" class="fa-brands fa-facebook"></i>
+                        <i id="fa" class="fa-brands fa-twitter"></i>
+                        <i id="fa" class="fa-brands fa-whatsapp"></i>
+                        <i id="fa" class="fa-brands fa-pinterest"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Techwiz &copy; 2024 - All Rights Reserved</p>
+    </footer>
+    <!--Footer-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // search-box open close js code
+        let navbar = document.querySelector(".navbar");
+        let searchBox = document.querySelector(".search-box .bx-search");
+        // let searchBoxCancel = document.querySelector(".search-box .bx-x");
+
+        searchBox.addEventListener("click", () => {
+            navbar.classList.toggle("showInput");
+            if (navbar.classList.contains("showInput")) {
+                searchBox.classList.replace("bx-search", "bx-x");
+            } else {
+                searchBox.classList.replace("bx-x", "bx-search");
+            }
+        });
+
+        // sidebar open close js code
+        let navLinks = document.querySelector(".nav-links");
+        let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+        let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+        menuOpenBtn.onclick = function () {
+            navLinks.style.left = "0";
+        }
+        menuCloseBtn.onclick = function () {
+            navLinks.style.left = "-100%";
+        }
+
+
+        // sidebar submenu open close js code
+        let htmlcssArrow = document.querySelector(".htmlcss-arrow");
+        htmlcssArrow.onclick = function () {
+            navLinks.classList.toggle("show1");
+        }
+        let moreArrow = document.querySelector(".more-arrow");
+        moreArrow.onclick = function () {
+            navLinks.classList.toggle("show2");
+        }
+        let jsArrow = document.querySelector(".js-arrow");
+        jsArrow.onclick = function () {
+            navLinks.classList.toggle("show3");
+        }
+
+
+
+        const cardData = [
+            {
+                "name": "France",
+                "job": "Paris </br> Pkr 103,673",
+                "img": "./image/ar1.jpeg",
+                "social": {
+                    "facebook": "#",
+                    "twitter": "#",
+                    "instagram": "#",
+                    "youtube": "#"
+                }
+            },
+            {
+                "name": "United Kingdom",
+                "job": "York </br> Pkr 172,503",
+                "img": "./image/ar2.jpeg",
+                "social": {
+                    "facebook": "#",
+                    "twitter": "#",
+                    "instagram": "#",
+                    "youtube": "#"
+                }
+            },
+            {
+                "name": "New Zealand",
+                "job": "Dunedin </br> Pkr 152,824",
+                "img": "./image/ar3.jpeg",
+                "social": {
+                    "facebook": "#",
+                    "twitter": "#",
+                    "instagram": "#",
+                    "youtube": "#"
+                }
+            },
+            {
+                "name": "Norway",
+                "job": "Oslo </br> Pkr 340,054",
+                "img": "image/ar4.jpeg",
+                "social": {
+                    "facebook": "#",
+                    "twitter": "#",
+                    "instagram": "#",
+                    "youtube": "#"
+                }
+            },
+            {
+                "name": "Australia",
+                "job": "Sydney </br> Pkr 325,791",
+                "img": "image/ar5.jpeg",
+                "social": {
+                    "facebook": "#",
+                    "twitter": "#",
+                    "instagram": "#",
+                    "youtube": "#"
+                }
+            },
+        ];
+
+        const cardsContainer = document.getElementById('cards-container');
+
+        cardData.forEach((card, index) => {
+            // Create card and its structure
+            const cardElement = document.createElement('div');
+            cardElement.classList.add('cards');
+
+            const cardContent = `
+            <div class="card">
+                <div class="content">
+                    <div class="img">
+                        <img src="${card.img}" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="name">${card.name}</div>
+                        <div class="job">${card.job}</div>
+                    </div>
+                    <div class="media-icons">
+                        <a href="$"><i class="fab fa-facebook-f"></i></a>
+                        <a href="${card.social.twitter}"><i class="fab fa-twitter"></i></a>
+                        <a href="${card.social.instagram}"><i class="fab fa-instagram"></i></a>
+                        <a href="${card.social.youtube}"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+            cardElement.innerHTML = cardContent;
+            cardsContainer.appendChild(cardElement);
+        });
+    </script>
+</body>
+
+</html>
